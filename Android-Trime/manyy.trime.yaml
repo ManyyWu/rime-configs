@@ -12,19 +12,19 @@ author: 'Manyy' # 作者信息
 # 键盘高度
 height:
   1: &jpgd1 30 # 表情键盘
-  2: &jpgd2 24 # 颜文字键盘1
-  3: &jpgd3 24 # 颜文字键盘2
   4: &jpgd4 48 # 主键盘
   5: &jpgd5 39.5 # 符号键盘
   6: &hgap 1 # 键盘横缝大小
   7: &sgap 1 # 键盘竖缝大小
 
+  # 2: &jpgd2 24 # 颜文字键盘1
+  # 3: &jpgd3 24 # 颜文字键盘2
 # 键盘高度
 round_corner:
   1: &round1 1 # 按键圆角半径
-  2: &round2 1 # 候选窗口圆角
-  3: &round3 1 # 回车键圆角
 
+  # 2: &round2 1 # 候选窗口圆角
+  # 3: &round3 1 # 回车键圆角
 # 界面风格、功能开关
 style:
   auto_caps: false # 自動句首大寫:true|false|ascii
@@ -158,12 +158,12 @@ colors:
   2: &color2 0xffffffff
   3: &color3 0xffe1e3e7
   4: &color4 0xffacb2c2
-  5: &color5 0xff131313
   6: &color6 0xff83A4C9
-  7: &color7 0x00
   8: &color8 0xff838383
   9: &color9 0xffdadada
 
+  # 5: &color5 0xff131313
+  # 7: &color7 0x00
 #--------配色开始----------------#
 
 # 配色方案
@@ -745,26 +745,6 @@ tool_bar:
       font_size: 12
     action: 'Keyboard_numberb'
 
-  ascii_mode_button: &ascii_mode_button
-    foreground:
-      option_styles: ['中', 'En'] # 样式也可以为表，将根据 action 的 toggle 决定
-      font_size: 18 # 按钮字体大小
-    action: 'Mode_switch'
-
-  paste_button: &paste_button
-    foreground:
-      style: 'ic@clipboard-text'
-      # style: "ic@clipboard-text-outline"
-      font_size: 12
-    action: 'paste'
-
-  VOICE_ASSIST: &VOICE_ASSIST_button
-    foreground:
-      style: 'ic@microphone'
-      # style: "ic@microphone-outline"
-      font_size: 14
-    action: 'VOICE_ASSIST'
-
   undo_button: &undo_button
     foreground:
       style: 'ic@reply'
@@ -793,6 +773,27 @@ tool_bar:
 
   # 右侧按钮列表（从右向左排列）
   buttons: [*hide_button, *clipboard_button, *edit_button, *redo_button, *undo_button, *right_button, *left_button]
+
+  # 未引用工具栏按钮
+  # ascii_mode_button: &ascii_mode_button
+    # foreground:
+      # option_styles: ['中', 'En'] # 样式也可以为表，将根据 action 的 toggle 决定
+      # font_size: 18 # 按钮字体大小
+    # action: 'Mode_switch'
+
+  # paste_button: &paste_button
+    # foreground:
+      # style: 'ic@clipboard-text'
+      # # style: "ic@clipboard-text-outline"
+      # font_size: 12
+    # action: 'paste'
+
+  # VOICE_ASSIST: &VOICE_ASSIST_button
+    # foreground:
+      # style: 'ic@microphone'
+      # # style: "ic@microphone-outline"
+      # font_size: 14
+    # action: 'VOICE_ASSIST'
 
 # 键盘布局
 preset_keyboards:
@@ -939,7 +940,7 @@ preset_keyboards:
     ascii_mode: 1
     keys:
       # 第一行
-      - {click: '%', long_click: '~', key_text_size: '12', key_text_size: '14', symbol_text_size: 14, key_symbol_offset_x: 17, key_back_color: 'bgn', key_text_color: 'th1', key_border: 0, width: 14}
+      - {click: '%', long_click: '~', key_text_size: '14', symbol_text_size: 14, key_symbol_offset_x: 17, key_back_color: 'bgn', key_text_color: 'th1', key_border: 0, width: 14}
       - {click: '+', long_click: '±', key_text_size: '16', key_symbol_offset_x: 17, key_back_color: 'bgn', key_text_color: 'th1', key_border: 0, width: 14}
       - {click: 1, key_text_color: 'th1'}
       - {click: 2, key_text_color: 'th1'}
@@ -1533,7 +1534,6 @@ preset_keyboards:
     author: '风花絮'
     name: '表情键2'
     ascii_mode: 0
-    reset_ascii_mode: true
     reset_ascii_mode: true
     width: 10
     height: *jpgd1
@@ -3755,21 +3755,7 @@ preset_keyboards:
 preset_keys:
   noop: {label: '', text: ''}
   # 安卓
-  BRIGHTNESS_DOWN: {label: '亮度-', send: 'BRIGHTNESS_DOWN'}
-  BRIGHTNESS_UP: {label: '亮度+', send: 'BRIGHTNESS_UP'}
-  CALCULATOR: {label: '计算机', send: 'CALCULATOR'}
-  CALENDAR: {label: '日历', send: 'CALENDAR'}
-  CONTACTS: {label: '电话簿', send: 'CONTACTS'}
-  ENVELOPE: {label: '信箱', send: 'ENVELOPE'}
-  EXPLORER: {label: '浏览器', send: 'EXPLORER'}
-  MUSIC: {label: '音乐', send: 'MUSIC'}
-  POWER: {label: '电源', send: 'POWER'}
-  SEARCH: {label: '搜寻', send: 'Find'}
-  SLEEP: {label: '休眠', send: 'SLEEP'}
   VOICE_ASSIST: {label: '语音', functional: true, send: 'VOICE_ASSIST'}
-  VOLUME_DOWN: {label: '音量-', send: 'VOLUME_DOWN'}
-  VOLUME_UP: {label: '音量+', send: 'VOLUME_UP'}
-  VOLUME_MUTE: {label: '静音', send: 'VOLUME_MUTE'}
   # 编辑
   Shift_L: {label: 'ic@apple-keyboard-shift', preview: '⇪', functional: false, send: 'Shift_L'}
   Shift_L1: {label: '选择', preview: '', functional: false, send: 'Shift_L', shift_lock: 'click'}
@@ -3786,12 +3772,9 @@ preset_keys:
   space1: {label: '空格', send: 'space'}
   space2: {label: 'ic@keyboard-space', slide_cursor: true, send: 'space'} # 用于数字键盘空格的展现形式
   space3: {label: '⎵', slide_cursor: true, send: 'space'} # 主键盘空格键的英文模式
-  Clear: {label: '全清', send: 'Clear'}
   Escape: {label: 'ic@keyboard-esc', functional: false, send: 'Escape'}
   Escape1: {label: 'Esc', functional: false, send: 'Escape'}
   Home: {label: 'ic@page-first', send: 'Home', functional: false}
-  Insert: {label: '插入', send: 'Insert'}
-  Delete: {label: '删除', send: 'Delete', functional: false}
   Delete1: {label: 'Del', send: 'Delete', functional: false}
   End: {label: 'ic@page-last', send: 'End', functional: false}
   Page_Up: {label: '上页', send: 'Page_Up', functional: false}
@@ -3807,27 +3790,12 @@ preset_keys:
   copy: {label: 'ic@checkbox-multiple-blank-outline', functional: false, send: 'Control+c'}
   paste: {label: 'ic@clipboard-text-outline', functional: false, send: 'Control+v'}
   paste_clip: {label: 'ic@clipboard-text-outline', send: 'function', command: 'clipboard'}
-  paste_text: {label: '貼上文本', send: 'Control+Shift+Alt+v'} # >=Android 6.0
-  share_text: {label: '分享文本', send: 'Control+Alt+s'} # >=Android 6.0
   redo: {label: '⤻', functional: false, send: 'Control+Shift+z'} # >=Android 6.0
   undo: {label: '⤺', functional: false, send: 'Control+z'} # >=Android 6.0
   delimiter: {label: '分词', text: ''''}
-  x1: {text: '{Home}{Right}{Right}', label: '单字', functional: false}
-  x2: {text: '{Home}{Right}{Right}{Right}{Right}', label: '二字', functional: false}
-  x3: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}', label: '三字', functional: false}
-  x4: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}{Right}{Right}', label: '四字', functional: false}
-  # x1: {text: '{Home}{Right}{Right}', label: 单字, functional: false}
   select_H: {label: 'ic@arrow-expand-horizontal', functional: false, text: '{End}{Shift+Home}'} # 选择行
-  RepeatCommit: {label: '重复', command: 'commit', option: '%1$s'} # 重复输入刚上屏的内容
   # rime组合键
-  F4: {label: '方案菜单', send: 'F4'}
-  BackToPreviousSyllable: {label: '删音节', send: 'Control+BackSpace'}
-  CommitRawInput: {label: '编码', send: 'Control+Return'}
-  CommitScriptText: {label: '编码', send: 'Shift+Return'}
-  CommitComment: {label: '编码', send: 'Control+Shift+Return'}
-  DeleteCandidate: {label: '删词', send: 'Control+Delete', functional: false}
   # 切换键盘
-  Keyboard_ascii: {label: 'abc', functional: true, send: 'Eisu_toggle', select: '.ascii'}
   Keyboard_letter: {label: 'ABC', functional: true, send: 'Eisu_toggle', select: 'letter'}
   Keyboard_letter_26keys: {label: 'ABC', functional: true, send: 'Eisu_toggle', select: 'letter_26keys'}
   Keyboard_default1: {label: 'ABC', send: 'Eisu_toggle', select: '.default'}
@@ -3836,62 +3804,18 @@ preset_keys:
   Keyboard_number: {label: 'ic@numeric', functional: false, send: 'Eisu_toggle', select: 'number'}
   Keyboard_numberb: {label: 'ic@cursor-move', functional: false, send: 'Eisu_toggle', select: 'numberb'}
   Keyboard_symbols: {label: '更多', functional: false, send: 'Eisu_toggle', select: 'symbols'}
-  Keyboard_move: {label: '❖', functional: true, send: 'Eisu_toggle', select: 'move'}
-  Keyboard_next: {label: '后退', functional: false, send: 'Eisu_toggle', select: '.next'}
-  Keyboard_last: {label: '后退', functional: false, send: 'Eisu_toggle', select: '.last'}
   Keyboard_last_lock: {label: 'ic@keyboard-outline', send: 'Eisu_toggle', select: '.last_lock'} # 直接切換到下一键盘
-  Keyboard_last_lock1: {label: '↩', send: 'Eisu_toggle', select: '.last_lock'} # 直接切換到下一键盘
-  Keyboard_previous: {label: '⌨', functional: true, send: 'Eisu_toggle', select: '.previous'}
   liquid_keyboard_exit: {label: '  ⌨  ', send: 'function', command: 'liquid_keyboard', option: '-1'} # 退出liquidkeyboard
-  liquid_keyboard_switch: {label: '更多', send: 'function', command: 'liquid_keyboard', option: '特殊'}
-  liquid_keyboard_switch2: {toggle: '_liquid_keyboard', send: 'Mode_switch', states: ['更多', '更多']}
   liquid_keyboard_tabs: {label: '更多', send: 'function', command: 'liquid_keyboard', option: '更多'}
-  liquid_keyboard_clipboard: {label: '剪贴', send: 'function', command: 'liquid_keyboard', option: '剪贴'}
-  liquid_keyboard_cn1: {label: 'ic@symbol', send: 'function', command: 'liquid_keyboard', option: 'emoji'}
-  liquid_keyboard_ascii1: {label: 'ic@symbol', send: 'function', command: 'liquid_keyboard', option: '西文'}
   menu_keyboard: {label: '菜单', send: 'function', command: 'menu_keyboard'}
   Keyboard_bqfh3-2: {label: 'ic@symbol', functional: false, send: 'Eisu_toggle', select: 'bqfh3'}
   clipboard_window: {label: '剪贴', send: 'function', command: 'clipboard_window'}
   # rime状态
   Mode_switch: {toggle: 'ascii_mode', functional: false, send: 'Mode_switch', states: ['中文', 'ABC']}
-  Mode_switch1: {toggle: 'ascii_mode', functional: false, send: 'SWITCH_CHARSET', states: ['中', 'ABC']}
-  Zenkaku_Hankaku: {toggle: 'full_shape', send: 'Mode_switch', states: ['半角', '全角']}
-  Henkan: {toggle: 'simplification', send: 'Mode_switch', states: ['汉字', '汉字']}
-  Charset_switch: {toggle: 'extended_charset', send: 'Mode_switch', states: ['常用', '增广']}
-  Punct_switch: {toggle: 'ascii_punct', send: 'Mode_switch', states: ['。，', '．，']}
   # trime设置
-  IME_switch: {label: '🌐', send: 'LANGUAGE_SWITCH'} # 彈出對話框選擇輸入法
-  IME_last: {label: '上一输入法', send: 'LANGUAGE_SWITCH', select: '.last'} # 直接切換到上一輸入法
-  IME_next: {label: '下一输入法', send: 'LANGUAGE_SWITCH', select: '.next'} # 直接切換到下一輸入法
-  Schema_switch: {label: '下一方案', functional: false, send: 'Control+Shift+1'}
-  Schema_Eng: {label: 'En', functional: true, send: 'Control+Shift+0'}
-  Theme_settings: {label: 'ic@palette-outline', send: 'SETTINGS', option: 'theme'}
-  Color_switch: {label: 'ic@brightness-6', functional: false, send: 'PROG_RED'}
-  Help: {label: '�', send: 'Help'}
-  Info: {label: 'ⓘ', send: 'INFO'}
   Menu: {label: 'ic@subtitles-outline', functional: false, send: 'Menu'}
-  Menu1: {label: '方案', functional: false, send: 'Menu'}
   Settings: {label: 'ic@tune', functional: false, send: 'SETTINGS'}
-  Deploy: {label: '部署', send: 'function', command: 'apply', option: 'DEPLOY'}
-  Deploy1: {label: 'ic@restore', send: 'function', command: 'apply', option: 'DEPLOY'}
   # trime命令
-  Date: {label: '日期', send: 'function', command: 'date', option: ' yyyy-MM-dd '}
-  Time: {label: '時間', send: 'function', command: 'date', option: 'HH:mm:ss'} # 時間： date 格式
-  TrimeApp: {label: '同文', send: 'function', command: 'run', option: 'com.osfans.trime'} # 運行程序: run 包名
-  TrimeCmp: {label: '同文組件', send: 'function', command: 'run', option: 'com.osfans.trime/.Pref'} # 運行程序指定組件: run 包名/組件名
-  Homepage: {label: 'ic@web', send: 'function', command: 'run', option: 'https://github.com/osfans/trime'} # 查看網頁: run 網址
-  Wiki: {label: '維基', send: 'function', command: 'run', option: 'https://zh.wikipedia.org/wiki/%s'} # 搜索網頁: %s或者%1$s爲當前字符
-  Google: {label: '谷歌', send: 'function', command: 'run', option: 'https://www.google.com/search?q=%s'} # 搜索網頁: %s或者%1$s爲當前字符
-  MoeDict: {label: '萌典', send: 'function', command: 'run', option: 'https://www.moedict.tw/%3$s'} # 搜索網頁: %3$s爲光標前字符
-  Baidu: {label: '百度搜索', send: 'function', command: 'run', option: 'https://www.baidu.com/s?wd=%4$s'} # 搜索網頁: %4s爲光標前所有字符
-  Zdic: {label: '漢典', send: 'function', command: 'run', option: 'http://www.zdic.net/sousuo/?q=%1$s'} # 搜索網頁: %s或者%1$s爲當前字符
-  Zdic2: {label: '漢典', send: 'function', command: 'run', option: 'http://www.zdic.net/sousuo/?q=%2$s'} # 搜索網頁: %2$s爲當前輸入的編碼
-  WebSearch: {label: '搜索網頁', send: 'function', command: 'web_search', option: '%4$s'} # 搜索，其他view、dial、edit、search等intent，參考安卓的intent文檔：https://developer.android.com/reference/android/content/Intent.html
-  YouDao: {label: '〩', send: 'function', command: 'run', option: 'https://fanyi.youdao.com/'} # 查看網頁: run 網址
-  Shift_L2: {label: '选择', preview: '⇪', functional: false, send: 'Shift_L'}
-
-  stroke: {label: '笔画', preview: , send: 'Control+Shift+s'}
-  wanxiang_pro: {label: '万象', preview: , send: 'Control+Shift+w'}
 
   # 用于 popup 的预设键：
   a-p: {commit: 'a', label: 'a '}
@@ -3951,61 +3875,18 @@ preset_keys:
   (-): {text: '(){Left}', label: 'ic@code-parentheses'}
 
   # stroke笔顺：
-  heng: {label: '一', text: 'h'}
-  shu: {label: '丨', text: 's'}
-  pie: {label: '丿', text: 'p'}
-  nai: {label: '丶', text: 'n'}
-  zhe: {label: '𠃋', text: 'z'}
-
-  jisuan: {label: '计算', text: '{Mode_switch}{V}'}
-  jine: {label: '￥', text: 'R'}
-  riqi: {label: '日期', text: 'N'}
-  fancha: {label: '⚲', text: '`'}
-  fancha1: {label: '⚲', text: 'uU'}
 
   # 22自定义功能键
-  Keyboard_fbjzj: {label: '助记', functional: false, send: 'Eisu_toggle', select: 'fbjzj'}
-  Keyboard_fbj: {label: '風', functional: false, send: 'Eisu_toggle', select: 'fbj'}
-  Keyboard_defaulten: {label: 'En', functional: false, send: 'Eisu_toggle', select: 'letter'}
-  Schema_switchen1: {label: 'EN', send: 'Control+Shift+5', functional: true}
-  Schema_switchen: {label: 'EN', send: 'Control+Shift+5', functional: false}
-  Schema_switchcn: {label: '中文', send: 'Control+Shift+6', functional: false}
-  Keyboard_v2: {label: '✾', functional: false, send: 'v'}
-  Keyboard_r2: {label: '❀', functional: false, send: 'r'}
-  Keyboard_fc: {label: "'分词", send: 'apostrophe', functional: false}
-  Control_L: {label: '退格', send: 'Control_L', functional: false}
 
   # aoeiu功能键
-  Keyboard_a: {label: 'A', functional: false, send: 'asciicircum', key_text_color: 'bct0'}
-  Keyboard_u: {label: 'U', functional: false, send: 'exclam', key_text_color: 'bct0'}
-  Keyboard_i: {label: 'I', functional: false, send: 'question', key_text_color: 'bct0'}
-  Keyboard_o: {label: 'O', functional: false, send: 'comma', key_text_color: 'bct0'}
-  Keyboard_e: {label: 'E', functional: false, send: 'period', key_text_color: 'bct0'}
-
-  Keyboard_u2: {label: '丨', text: '""{Left}'}
-  Keyboard_a2: {label: '一', send: 0}
-  Keyboard_i2: {label: '丿', text: "''{Left}"}
-  Keyboard_o2: {label: '丶', send: 9}
-  Keyboard_e2: {label: 'ㄥ', text: '{}{Left}'}
-  Keyboard_k: {label: '一', send: 'A'}
-  Keyboard_v: {label: '丨', send: 'U'}
-  Keyboard_h: {label: '丿', send: 'I'}
-  Keyboard_r: {label: '丶', send: 'O'}
-  Keyboard_e0: {label: 'ㄥ', send: 'E'}
-
-  Keyboard_a3: {label: '……', functional: false, send: 'asciicircum'}
 
   # 表情键自定义
-  Keyboard_bqfh: {label: '⌘', functional: true, send: 'Eisu_toggle', select: 'bqfh1'}
-  Keyboard_bqrw: {label: '⌘', functional: false, send: 'Eisu_toggle', select: 'bqfh1'}
   Keyboard_bqrw1: {label: '☻', functional: false, send: 'Eisu_toggle', select: 'bqrw1'}
   Keyboard_bqrw2: {label: '人物2', functional: false, send: 'Eisu_toggle', select: 'bqrw2'}
   Keyboard_bqrw3: {label: '人物3', functional: false, send: 'Eisu_toggle', select: 'bqrw3'}
   Keyboard_bqrw4: {label: '人物4', functional: false, send: 'Eisu_toggle', select: 'bqrw4'}
   Keyboard_bqrw5: {label: '人物5', functional: false, send: 'Eisu_toggle', select: 'bqrw5'}
   Keyboard_bqrw6: {label: '人物6', functional: false, send: 'Eisu_toggle', select: 'bqrw6'}
-  Keyboard_bqrw7: {label: '人物7', functional: false, send: 'Eisu_toggle', select: 'bqrw7'}
-  Keyboard_bqrw8: {label: '人物8', functional: false, send: 'Eisu_toggle', select: 'bqrw8'}
 
   Keyboard_bqqt1: {label: '🔶', functional: false, send: 'Eisu_toggle', select: 'bqqt1'}
   Keyboard_bqqt2: {label: '其它1', functional: false, send: 'Eisu_toggle', select: 'bqqt2'}
@@ -4044,9 +3925,7 @@ preset_keys:
 
   Keyboard_bqfh1: {label: 'ic@symbol', functional: false, send: 'Eisu_toggle', select: 'bqfh1'}
   Keyboard_bqfh2: {label: '上页', functional: false, send: 'Eisu_toggle', select: 'bqfh2', key_text_size: '14'}
-  Keyboard_bqfh3: {label: '上页', functional: false, send: 'Eisu_toggle', select: 'bqfh3', key_text_size: '14'}
   Keyboard_bqfh3-1: {label: ' ', functional: false, send: 'Eisu_toggle', select: 'bqfh3', key_text_size: '14'}
-  Keyboard_bqfh4: {label: '下页', functional: false, send: 'Eisu_toggle', select: 'bqfh4', key_text_size: '14'}
 
   Keyboard_bqsy1: {label: '中文', functional: false, send: 'Eisu_toggle', select: 'bqfh1', key_text_size: '14'}
   Keyboard_bqsy2: {label: '西文', functional: false, send: 'Eisu_toggle', select: 'bqfh3', key_text_size: '14'}
@@ -4055,7 +3934,6 @@ preset_keys:
   Keyboard_bqsy4: {label: '颜文', functional: false, send: 'Eisu_toggle', select: 'kao_happy', key_text_size: '14'}
 
   # 颜文字键盘
-  Keyboard_kao: {label: '^_^', functional: false, send: 'Eisu_toggle', select: 'kao_happy'}
   Keyboard_kaoh: {label: '开心', functional: false, send: 'Eisu_toggle', select: 'kao_happy'}
   Keyboard_kaof: {label: '喜欢', functional: false, send: 'Eisu_toggle', select: 'kao_fond'}
   Keyboard_kaos: {label: '伤心', functional: false, send: 'Eisu_toggle', select: 'kao_sad'}
@@ -4063,12 +3941,7 @@ preset_keys:
   Keyboard_kaoa: {label: '惊讶', functional: false, send: 'Eisu_toggle', select: 'kao_astonished'}
   Keyboard_kaoi: {label: '无奈', functional: false, send: 'Eisu_toggle', select: 'kao_impotent'}
 
-  Zcj: {label: '单字', functional: false, text: '{Home}{Right}{Right}'}
-  Tab: {label: '字词', send: 'Tab'}
   Tab1: {label: 'Tab', functional: false, send: 'Tab'}
-  space_R: {label: '風二十二键', functional: false, send: 'Eisu_toggle', select: 'letter'}
-  space_R1: {label: 'EN', functional: false, send: 'Eisu_toggle', select: 'letter'}
-  space_R2: {label: '中', functional: false, send: 'Eisu_toggle', select: 'fbj'}
   # 符号
   符号: {text: '{Escape}/fh', label: '符号', functional: false}
   电脑: {text: '{Escape}/dn', label: '电脑', functional: false}
@@ -4118,6 +3991,142 @@ preset_keys:
   标点: {text: '{Escape}/bd', label: '标点', functional: false}
   偏旁: {text: '{Escape}/pp', label: '偏旁', functional: false}
   竖标点: {text: '{Escape}/bdz', label: '竖标', functional: false}
+
+  # 未引用 preset_keys
+  # Android 与编辑功能
+  # BRIGHTNESS_DOWN: {label: '亮度-', send: 'BRIGHTNESS_DOWN'}
+  # BRIGHTNESS_UP: {label: '亮度+', send: 'BRIGHTNESS_UP'}
+  # CALCULATOR: {label: '计算机', send: 'CALCULATOR'}
+  # CALENDAR: {label: '日历', send: 'CALENDAR'}
+  # CONTACTS: {label: '电话簿', send: 'CONTACTS'}
+  # ENVELOPE: {label: '信箱', send: 'ENVELOPE'}
+  # EXPLORER: {label: '浏览器', send: 'EXPLORER'}
+  # MUSIC: {label: '音乐', send: 'MUSIC'}
+  # POWER: {label: '电源', send: 'POWER'}
+  # SEARCH: {label: '搜寻', send: 'Find'}
+  # SLEEP: {label: '休眠', send: 'SLEEP'}
+  # VOLUME_DOWN: {label: '音量-', send: 'VOLUME_DOWN'}
+  # VOLUME_UP: {label: '音量+', send: 'VOLUME_UP'}
+  # VOLUME_MUTE: {label: '静音', send: 'VOLUME_MUTE'}
+  # Clear: {label: '全清', send: 'Clear'}
+  # Insert: {label: '插入', send: 'Insert'}
+  # Delete: {label: '删除', send: 'Delete', functional: false}
+  # paste_text: {label: '貼上文本', send: 'Control+Shift+Alt+v'} # >=Android 6.0
+  # share_text: {label: '分享文本', send: 'Control+Alt+s'} # >=Android 6.0
+  # x1: {text: '{Home}{Right}{Right}', label: '单字', functional: false}
+  # x2: {text: '{Home}{Right}{Right}{Right}{Right}', label: '二字', functional: false}
+  # x3: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}', label: '三字', functional: false}
+  # x4: {text: '{Home}{Right}{Right}{Right}{Right}{Right}{Right}{Right}{Right}', label: '四字', functional: false}
+  # RepeatCommit: {label: '重复', command: 'commit', option: '%1$s'} # 重复输入刚上屏的内容
+  # F4: {label: '方案菜单', send: 'F4'}
+  # BackToPreviousSyllable: {label: '删音节', send: 'Control+BackSpace'}
+  # CommitRawInput: {label: '编码', send: 'Control+Return'}
+  # CommitScriptText: {label: '编码', send: 'Shift+Return'}
+  # CommitComment: {label: '编码', send: 'Control+Shift+Return'}
+  # DeleteCandidate: {label: '删词', send: 'Control+Delete', functional: false}
+
+  # 键盘切换与液态键盘
+  # Keyboard_ascii: {label: 'abc', functional: true, send: 'Eisu_toggle', select: '.ascii'}
+  # Keyboard_move: {label: '❖', functional: true, send: 'Eisu_toggle', select: 'move'}
+  # Keyboard_next: {label: '后退', functional: false, send: 'Eisu_toggle', select: '.next'}
+  # Keyboard_last: {label: '后退', functional: false, send: 'Eisu_toggle', select: '.last'}
+  # Keyboard_last_lock1: {label: '↩', send: 'Eisu_toggle', select: '.last_lock'} # 直接切換到下一键盘
+  # Keyboard_previous: {label: '⌨', functional: true, send: 'Eisu_toggle', select: '.previous'}
+  # liquid_keyboard_switch: {label: '更多', send: 'function', command: 'liquid_keyboard', option: '特殊'}
+  # liquid_keyboard_switch2: {toggle: '_liquid_keyboard', send: 'Mode_switch', states: ['更多', '更多']}
+  # liquid_keyboard_clipboard: {label: '剪贴', send: 'function', command: 'liquid_keyboard', option: '剪贴'}
+  # liquid_keyboard_cn1: {label: 'ic@symbol', send: 'function', command: 'liquid_keyboard', option: 'emoji'}
+  # liquid_keyboard_ascii1: {label: 'ic@symbol', send: 'function', command: 'liquid_keyboard', option: '西文'}
+
+  # 状态、设置与命令
+  # Mode_switch1: {toggle: 'ascii_mode', functional: false, send: 'SWITCH_CHARSET', states: ['中', 'ABC']}
+  # Zenkaku_Hankaku: {toggle: 'full_shape', send: 'Mode_switch', states: ['半角', '全角']}
+  # Henkan: {toggle: 'simplification', send: 'Mode_switch', states: ['汉字', '汉字']}
+  # Charset_switch: {toggle: 'extended_charset', send: 'Mode_switch', states: ['常用', '增广']}
+  # Punct_switch: {toggle: 'ascii_punct', send: 'Mode_switch', states: ['。，', '．，']}
+  # IME_switch: {label: '🌐', send: 'LANGUAGE_SWITCH'} # 彈出對話框選擇輸入法
+  # IME_last: {label: '上一输入法', send: 'LANGUAGE_SWITCH', select: '.last'} # 直接切換到上一輸入法
+  # IME_next: {label: '下一输入法', send: 'LANGUAGE_SWITCH', select: '.next'} # 直接切換到下一輸入法
+  # Schema_switch: {label: '下一方案', functional: false, send: 'Control+Shift+1'}
+  # Schema_Eng: {label: 'En', functional: true, send: 'Control+Shift+0'}
+  # Theme_settings: {label: 'ic@palette-outline', send: 'SETTINGS', option: 'theme'}
+  # Color_switch: {label: 'ic@brightness-6', functional: false, send: 'PROG_RED'}
+  # Help: {label: '�', send: 'Help'}
+  # Info: {label: 'ⓘ', send: 'INFO'}
+  # Menu1: {label: '方案', functional: false, send: 'Menu'}
+  # Deploy: {label: '部署', send: 'function', command: 'apply', option: 'DEPLOY'}
+  # Deploy1: {label: 'ic@restore', send: 'function', command: 'apply', option: 'DEPLOY'}
+  # Date: {label: '日期', send: 'function', command: 'date', option: ' yyyy-MM-dd '}
+  # Time: {label: '時間', send: 'function', command: 'date', option: 'HH:mm:ss'} # 時間： date 格式
+  # TrimeApp: {label: '同文', send: 'function', command: 'run', option: 'com.osfans.trime'} # 運行程序: run 包名
+  # TrimeCmp: {label: '同文組件', send: 'function', command: 'run', option: 'com.osfans.trime/.Pref'} # 運行程序指定組件: run 包名/組件名
+  # Homepage: {label: 'ic@web', send: 'function', command: 'run', option: 'https://github.com/osfans/trime'} # 查看網頁: run 網址
+  # Wiki: {label: '維基', send: 'function', command: 'run', option: 'https://zh.wikipedia.org/wiki/%s'} # 搜索網頁: %s或者%1$s爲當前字符
+  # Google: {label: '谷歌', send: 'function', command: 'run', option: 'https://www.google.com/search?q=%s'} # 搜索網頁: %s或者%1$s爲當前字符
+  # MoeDict: {label: '萌典', send: 'function', command: 'run', option: 'https://www.moedict.tw/%3$s'} # 搜索網頁: %3$s爲光標前字符
+  # Baidu: {label: '百度搜索', send: 'function', command: 'run', option: 'https://www.baidu.com/s?wd=%4$s'} # 搜索網頁: %4s爲光標前所有字符
+  # Zdic: {label: '漢典', send: 'function', command: 'run', option: 'http://www.zdic.net/sousuo/?q=%1$s'} # 搜索網頁: %s或者%1$s爲當前字符
+  # Zdic2: {label: '漢典', send: 'function', command: 'run', option: 'http://www.zdic.net/sousuo/?q=%2$s'} # 搜索網頁: %2$s爲當前輸入的編碼
+  # WebSearch: {label: '搜索網頁', send: 'function', command: 'web_search', option: '%4$s'} # 搜索，其他view、dial、edit、search等intent，參考安卓的intent文檔：https://developer.android.com/reference/android/content/Intent.html
+  # YouDao: {label: '〩', send: 'function', command: 'run', option: 'https://fanyi.youdao.com/'} # 查看網頁: run 網址
+  # Shift_L2: {label: '选择', preview: '⇪', functional: false, send: 'Shift_L'}
+  # stroke: {label: '笔画', preview: , send: 'Control+Shift+s'}
+  # wanxiang_pro: {label: '万象', preview: , send: 'Control+Shift+w'}
+  # heng: {label: '一', text: 'h'}
+
+  # 笔画与自定义文本
+  # shu: {label: '丨', text: 's'}
+  # pie: {label: '丿', text: 'p'}
+  # nai: {label: '丶', text: 'n'}
+  # zhe: {label: '𠃋', text: 'z'}
+  # jisuan: {label: '计算', text: '{Mode_switch}{V}'}
+  # jine: {label: '￥', text: 'R'}
+  # riqi: {label: '日期', text: 'N'}
+  # fancha: {label: '⚲', text: '`'}
+  # fancha1: {label: '⚲', text: 'uU'}
+  # Keyboard_fbjzj: {label: '助记', functional: false, send: 'Eisu_toggle', select: 'fbjzj'}
+
+  # 二十二键及 AOEIU 功能
+  # Keyboard_fbj: {label: '風', functional: false, send: 'Eisu_toggle', select: 'fbj'}
+  # Keyboard_defaulten: {label: 'En', functional: false, send: 'Eisu_toggle', select: 'letter'}
+  # Schema_switchen1: {label: 'EN', send: 'Control+Shift+5', functional: true}
+  # Schema_switchen: {label: 'EN', send: 'Control+Shift+5', functional: false}
+  # Schema_switchcn: {label: '中文', send: 'Control+Shift+6', functional: false}
+  # Keyboard_v2: {label: '✾', functional: false, send: 'v'}
+  # Keyboard_r2: {label: '❀', functional: false, send: 'r'}
+  # Keyboard_fc: {label: "'分词", send: 'apostrophe', functional: false}
+  # Control_L: {label: '退格', send: 'Control_L', functional: false}
+  # Keyboard_a: {label: 'A', functional: false, send: 'asciicircum', key_text_color: 'bct0'}
+  # Keyboard_u: {label: 'U', functional: false, send: 'exclam', key_text_color: 'bct0'}
+  # Keyboard_i: {label: 'I', functional: false, send: 'question', key_text_color: 'bct0'}
+  # Keyboard_o: {label: 'O', functional: false, send: 'comma', key_text_color: 'bct0'}
+  # Keyboard_e: {label: 'E', functional: false, send: 'period', key_text_color: 'bct0'}
+  # Keyboard_u2: {label: '丨', text: '""{Left}'}
+  # Keyboard_a2: {label: '一', send: 0}
+  # Keyboard_i2: {label: '丿', text: "''{Left}"}
+  # Keyboard_o2: {label: '丶', send: 9}
+  # Keyboard_e2: {label: 'ㄥ', text: '{}{Left}'}
+  # Keyboard_k: {label: '一', send: 'A'}
+  # Keyboard_v: {label: '丨', send: 'U'}
+  # Keyboard_h: {label: '丿', send: 'I'}
+  # Keyboard_r: {label: '丶', send: 'O'}
+  # Keyboard_e0: {label: 'ㄥ', send: 'E'}
+  # Keyboard_a3: {label: '……', functional: false, send: 'asciicircum'}
+  # Keyboard_bqfh: {label: '⌘', functional: true, send: 'Eisu_toggle', select: 'bqfh1'}
+
+  # 表情、颜文字及其他切换键
+  # Keyboard_bqrw: {label: '⌘', functional: false, send: 'Eisu_toggle', select: 'bqfh1'}
+  # Keyboard_bqrw7: {label: '人物7', functional: false, send: 'Eisu_toggle', select: 'bqrw7'}
+  # Keyboard_bqrw8: {label: '人物8', functional: false, send: 'Eisu_toggle', select: 'bqrw8'}
+  # Keyboard_bqfh3: {label: '上页', functional: false, send: 'Eisu_toggle', select: 'bqfh3', key_text_size: '14'}
+  # Keyboard_bqfh4: {label: '下页', functional: false, send: 'Eisu_toggle', select: 'bqfh4', key_text_size: '14'}
+  # Keyboard_kao: {label: '^_^', functional: false, send: 'Eisu_toggle', select: 'kao_happy'}
+  # Zcj: {label: '单字', functional: false, text: '{Home}{Right}{Right}'}
+  # Tab: {label: '字词', send: 'Tab'}
+  # space_R: {label: '風二十二键', functional: false, send: 'Eisu_toggle', select: 'letter'}
+  # space_R1: {label: 'EN', functional: false, send: 'Eisu_toggle', select: 'letter'}
+  # space_R2: {label: '中', functional: false, send: 'Eisu_toggle', select: 'fbj'}
+
 
 # 配置路径：
 # /storage/emulated/0/Android/data/com.osfans.trime/files/rime
