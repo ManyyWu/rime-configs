@@ -53,8 +53,9 @@ style:
   label_text_size: 22 #标签字号
   label_font: label.ttf #编标签字体
   latin_font: latin.ttf #西文本体
-  keyboard_height: 220 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
+  keyboard_height: 230 #锁定键盘高度，避免切换时键盘高度变化而造成闪烁
   keyboard_height_land: 200 #锁定横屏下键盘高度，避免切换时键盘高度变化而造成闪烁
+  # keyboard_padding_bottom: 30
   key_symbol_offset_x: 10
   popup_font: latin.ttf #按键提示字体
   popup_width: 45 #按键提示宽度
