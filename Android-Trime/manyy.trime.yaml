@@ -843,10 +843,10 @@ preset_keyboards:
       # 第四行
       - {click: 'Keyboard_bqfh1', ascii: 'Keyboard_bqfh3-2', long_click: 'noop', label_symbol: ' ', swipe_up: '', swipe_down: '', key_text_size: '20', key_symbol_offset_x: 15, key_back_color: 'c3', key_text_color: 'tenter', key_border: 1}
       - {click: 'Keyboard_number', long_click: 'noop', label_symbol: ' ', swipe_up: '', swipe_down: '', key_text_size: '18', key_symbol_offset_y: -4, symbol_text_size: 14, key_back_color: 'c4', key_text_color: 'tenter', key_border: 1}
-      - {click: ',', label: '，', long_click: '!', swipe_down: '!', swipe_right: '!', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
-      - {click: 'space', ascii: 'space3', long_click: , swipe_up: '', swipe_down: '', width: 27, key_text_size: '10', symbol_text_size: 9, key_symbol_offset_x: 35, key_back_color: 'bkg', key_text_color: 'th1', key_border: 0}
-      - {click: '.', label: '。', long_click: '?', swipe_up: '?', swipe_down: '?', swipe_left: '?', swipe_right: '', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
       - {click: 'Keyboard_letter', popup: ['Keyboard_roots', 'Keyboard_26keys'], composing: 'Escape1', key_text_size: '14', key_back_color: 'c5', key_text_color: 'th4', key_border: 1}
+      - {click: ',', label: '，', long_click: '!', swipe_down: '!', swipe_right: '!', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
+      - {click: 'space', ascii: 'space3', long_click: '', swipe_up: '', swipe_down: '', width: 27, key_text_size: '10', symbol_text_size: 9, key_symbol_offset_x: 35, key_back_color: 'bkg', key_text_color: 'th1', key_border: 0}
+      - {click: '.', label: '。', long_click: '?', swipe_up: '?', swipe_down: '?', swipe_left: '?', swipe_right: '', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
       - {click: 'Return', composing: , long_click: , swipe_up: 'Escape', width: 17.4, key_text_size: '18', key_back_color: 'benter', key_text_color: 'tenter', key_border: 1}
 
   26keys:
@@ -895,10 +895,10 @@ preset_keyboards:
       # 第四行
       - {click: 'Keyboard_bqfh1', ascii: 'Keyboard_bqfh3-2', long_click: 'noop', label_symbol: ' ', swipe_up: '', swipe_down: '', key_text_size: '20', key_symbol_offset_x: 15, key_back_color: 'c3', key_text_color: 'tenter', key_border: 1}
       - {click: 'Keyboard_number', long_click: 'noop', label_symbol: ' ', swipe_up: '', swipe_down: '', key_text_size: '18', key_symbol_offset_y: -4, symbol_text_size: 14, key_back_color: 'c4', key_text_color: 'tenter', key_border: 1}
-      - {click: ',', label: '，', long_click: '!', swipe_up: '!', swipe_down: '!', swipe_right: '!', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
-      - {click: 'space', ascii: 'space3', long_click: , swipe_up: '', swipe_down: '', width: 27, key_text_size: '10', symbol_text_size: 9, key_symbol_offset_x: 35, key_back_color: 'bkg', key_text_color: 'th1', key_border: 0}
-      - {click: '.', label: '。', long_click: '?', swipe_up: '?', swipe_down: '?', swipe_left: '?', swipe_right: '', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
       - {click: 'Keyboard_letter_26keys', popup: ['Keyboard_roots', 'Keyboard_26keys'], composing: 'Escape1', key_text_size: '14', key_back_color: 'c5', key_text_color: 'th4', key_border: 1}
+      - {click: ',', label: '，', long_click: '!', swipe_up: '!', swipe_down: '!', swipe_right: '!', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
+      - {click: 'space', ascii: 'space3', long_click: '', swipe_up: '', swipe_down: '', width: 27, key_text_size: '10', symbol_text_size: 9, key_symbol_offset_x: 35, key_back_color: 'bkg', key_text_color: 'th1', key_border: 0}
+      - {click: '.', label: '。', long_click: '?', swipe_up: '?', swipe_down: '?', swipe_left: '?', swipe_right: '', key_back_color: 'bh4', key_text_color: 'th4', key_border: 0}
       - {click: 'Return', composing: , long_click: , swipe_up: 'Escape', width: 17.4, key_text_size: '18', key_back_color: 'benter', key_text_color: 'tenter', key_border: 1}
 
   # 英文键盘
@@ -908,7 +908,7 @@ preset_keyboards:
     __include: 'preset_keyboards/26keys'
     __patch:
       - 'keys/@19/label_symbol': '\'
-      - 'keys/@35/click': 'Keyboard_default1'
+      - 'keys/@32/click': 'Keyboard_default1'
       - 'keys/@4/key_back_color': 'bh1-border-right.png'
       - 'keys/@5/key_back_color': 'bh1-border-left.png'
       - 'keys/@15/key_back_color': 'bh2-border-right.png'
@@ -923,7 +923,7 @@ preset_keyboards:
     __include: 'preset_keyboards/26keys'
     __patch:
       - 'keys/@19/label_symbol': '\'
-      - 'keys/@35/click': 'Keyboard_26keys'
+      - 'keys/@32/click': 'Keyboard_26keys'
       - 'keys/@4/key_back_color': 'bh1-border-right.png'
       - 'keys/@5/key_back_color': 'bh1-border-left.png'
       - 'keys/@15/key_back_color': 'bh2-border-right.png'
