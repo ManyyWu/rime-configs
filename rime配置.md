@@ -182,6 +182,10 @@ reverse_lookup:
 
 # 问题
 
-* MacOS Terminal无法输入中文？
+* MacOS应用（如：Terminal）无法输入中文？
 
-  squirrel.yaml中找到com.apple.Terminal，将ascii_mode改成false
+  Rime/build/squirrel.yaml中找到Bundle ID，将ascii_mode改成false
+  以下是常见应用：
+    * com.apple.Spotlight
+    * com.apple.Terminal
+    * com.microsoft.VSCode
