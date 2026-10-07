@@ -189,3 +189,4 @@ reverse_lookup:
     * com.apple.Spotlight
     * com.apple.Terminal
     * com.microsoft.VSCode
+    * com.googlecode.iterm2:
